@@ -22,14 +22,14 @@ export class SearchComponent implements OnInit {
 
   constructor() {
     this.keypressSubject
-      .map((word: string) => word.toLowerCase())
+      .map((term: string) => term.toLowerCase())
       .debounceTime(250)
-      .do(word => this.suggestions = [])
-      .filter(word => word !== '')
-      .map((word: string) => {
+      .do(term => this.suggestions = [])
+      .filter(term => term !== '')
+      .map((term: string) => {
         let suggestions = [];
         this.companies.forEach(option => {
-          if (option.includes(word)) {
+          if (option.includes(term)) {
             suggestions.push(option);
           }
         });
@@ -43,7 +43,7 @@ export class SearchComponent implements OnInit {
     this.keypressSubject.next(this.searchTerm);
   }
 
-  fill(str) {
+  select(str) {
     this.searchTerm = str;
   }
 
