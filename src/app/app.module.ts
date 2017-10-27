@@ -18,8 +18,7 @@ import { SearchComponent } from './search/search.component';
     FormsModule,
     MatCardModule,
     MatButtonModule, 
-    MatInputModule,
-    
+    MatInputModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

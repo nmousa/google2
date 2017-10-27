@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Rx';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'search',
@@ -21,6 +22,7 @@ export class SearchComponent implements OnInit {
   ];
 
   constructor() {
+
     this.keypressSubject
       .map((term: string) => term.toLowerCase())
       .debounceTime(250)
@@ -45,6 +47,8 @@ export class SearchComponent implements OnInit {
 
   select(str) {
     this.searchTerm = str;
+    let result = SearchService.getMockResult("");
+    console.log(result);
   }
 
   ngOnInit() {
