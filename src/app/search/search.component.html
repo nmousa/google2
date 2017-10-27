@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="searchTerm" (keyup)="keypress()"/>
+<div *ngFor="let suggestion of suggestions">
+  <button (click)="fill(suggestion)">{{suggestion}}</button>
+</div>
