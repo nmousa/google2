@@ -1,6 +1,6 @@
-<mat-form-field>
-  <input matInput placeholder="Search for company..." [(ngModel)]="searchTerm" (keyup)="keypress()" />
-</mat-form-field>
-<div *ngFor="let suggestion of suggestions">
-  <button mat-button (click)="select(suggestion)">{{suggestion}}</button>
-</div>
+  <mat-form-field>
+    <input matInput placeholder="Search for company..." [(ngModel)]="searchTerm" (keyup)="keypress()" />
+  </mat-form-field>
+  <div *ngFor="let suggestion of suggestions">
+    <button mat-button (click)="select(suggestion)">{{suggestion}}</button>
+  </div>
