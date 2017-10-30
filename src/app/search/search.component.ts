@@ -9,6 +9,7 @@ import { SearchService } from './search.service';
 })
 export class SearchComponent implements OnInit {
   searchTerm = '';
+  searchResult = '';
 
   keypressSubject = new Subject<any>();
 
@@ -21,7 +22,7 @@ export class SearchComponent implements OnInit {
     'CVS Health'
   ];
 
-  constructor() {
+  constructor(private searchService: SearchService) {
 
     this.keypressSubject
       .map((term: string) => term.toLowerCase())
@@ -47,8 +48,7 @@ export class SearchComponent implements OnInit {
 
   select(str) {
     this.searchTerm = str;
-    let result = SearchService.getMockResult("");
-    console.log(result);
+    this.searchService.getMockResult(this.searchTerm).subscribe(data => this.searchResult = data);
   }
 
   ngOnInit() {

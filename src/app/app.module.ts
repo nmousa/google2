@@ -6,6 +6,7 @@ import { MatCardModule, MatButtonModule, MatInputModule } from '@angular/materia
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import { SearchService } from './search/search.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { SearchComponent } from './search/search.component';
     MatButtonModule, 
     MatInputModule,    
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
