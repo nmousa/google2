@@ -6,7 +6,7 @@ export class SearchService {
 
     public getMockResult(companyName: string): Observable<string> {
 
-        let result = "no result";
+        let result = "";
 
         switch (companyName) {
             case 'Berkshire Hathaway': {
@@ -25,6 +25,10 @@ export class SearchService {
             case 'CVS Health': {
                 result = "CVS Health (previously CVS Corporation and CVS Caremark Corporation) is an American retail pharmacy and health care company headquartered in Woonsocket, Rhode Island. The company began in 1964 with three partners who grew the venture from a parent company, Mark Steven, Inc., that helped retailers manage their health and beauty aid product lines. The business began as a chain of health and beauty aid stores, but within several years, pharmacies were added. To facilitate growth and expansion, the company joined The Melville Corporation, which managed a string of retail businesses.";
                 break;
+            }
+
+            case '': {
+                result = "no result";
             }
 
             default: {

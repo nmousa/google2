@@ -47,6 +47,7 @@ export class SearchComponent implements OnInit {
   }
 
   select(str) {
+    console.log("select -> ", str);
     this.searchTerm = str;
     this.searchService.getMockResult(this.searchTerm).subscribe(data => this.searchResult = data);
   }
